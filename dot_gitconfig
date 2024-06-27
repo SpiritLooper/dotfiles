@@ -1,0 +1,11 @@
+[user]
+	name = Julien CLAISSE
+	email = julienclaisse@orange.fr
+[commit]
+    gpgsign = false
+[init]
+    defaultBranch = master
+[core]
+    editor = vim
+[pull]
+    ff = only

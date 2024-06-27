@@ -1,0 +1,68 @@
+format='''
+[┌─\[$username@$hostname\]-\[$directory\] ({($git_state)$git_branch(~$git_commit)$git_status})( $python)( $package)$fill$cmd_duration $status$jobs
+└─(\($nix_shell\)-)](#0050a3)$character
+'''
+
+add_newline = true
+
+[cmd_duration]
+show_notifications=false
+format='⏳\([$duration]($style)\)'
+
+[directory]
+format='[$read_only]($read_only_style)[$path]($style)'
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+
+[fill]
+symbol=' '
+
+[git_branch]
+symbol = '[→](bright-yellow)'
+style = 'bright-green'
+format = '[$symbol$branch(:$remote_branch)]($style)'
+truncation_symbol=''
+
+[git_commit]
+format='[$hash $tag]($style)'
+style='bright-yellow'
+tag_disabled=false
+tag_symbol='🔖'
+
+[git_state]
+[git_status]
+format='( [\[$all_status$ahead_behind\]]($style))'
+
+[hostname]
+ssh_only=false
+format='[$hostname]($style)'
+
+[nix_shell]
+format='[$symbol$state]($style)'
+symbol='❄️'
+impure_msg='⚠️'
+style='bold cyan'
+
+[package]
+format='[$symbol\[$version\]]($style)'
+symbol='📦'
+
+[python]
+format='[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
+symbol='🐍'
+
+[status]
+format = '[$symbol$int]($style) '
+pipestatus_format = '\[$pipestatus\]( → [$symbol]($style))'
+pipestatus_segment_format = '[$int]($style)'
+pipestatus = true
+map_symbol = true
+disabled = false
+
+[username]
+format='[$user]($style)'
+show_always=true

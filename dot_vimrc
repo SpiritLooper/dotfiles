@@ -1,0 +1,30 @@
+syntax on
+set expandtab
+set tabstop=4
+set shiftwidth=2
+
+set wildmenu
+set showcmd
+set ruler
+set history=200
+set display=truncate
+
+set backspace=indent,eol,start
+
+" Mouse configuration
+if has('mouse')
+    if &term =~ 'xterm'
+        set mouse-=a
+    else
+        set mouse=nvi
+    endif
+endif
+
+" Do not recognize octal numbers for CTRL-A and CTRL-X most users find it
+" Confusing
+set nrformats-=octal
+
+" Do incremental searching when it's possible to timeout
+if has('reltime')
+    set incsearch
+endif

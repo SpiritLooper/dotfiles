@@ -1,0 +1,22 @@
+{
+    "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "editor.fontFamily": "'Fire Code', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false,
+    "spellright.ignoreFiles": [
+        "**/.gitignore",
+        "**/.dockerignore",
+        "**/.editorconfig",
+        "**/.crt",
+        "**/.pem",
+        "**/.json",
+        "**/.pub",
+        "**/.key",
+    ],
+    "[ssh_config]": {},
+    "security.workspace.trust.untrustedFiles": "open",
+    "diffEditor.ignoreTrimWhitespace": false
+}
