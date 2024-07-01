@@ -3,7 +3,11 @@
 # Add fish shell packages
 { config, pkgs, ... }:
 {
-  home.packages = with pkgs; [ fish babelfish ];
+  home.packages = with pkgs; [ 
+    fish 
+    babelfish
+    kitty
+  ];
 }
 {{   end -}}
 {{ end -}}

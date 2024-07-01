@@ -1,6 +1,14 @@
 {{ if eq .chezmoi.os "linux" -}}
 {{   if eq .chezmoi.osRelease.id "nixos" -}}
 #!/usr/bin/env fish
+
+{{ $files := list "home.nix" "gtk.nix" "shell.nix" "fonts.nix" -}}
+## Nix files to follow hashes
+{{- range $i, $file  := $files -}}
+{{ $file = list $file ".tmpl" | join "" }}
+# {{ $file }} : {{ include ( joinPath "private_dot_config/home-manager" $file ) | sha256sum -}}
+{{ end }}
+
 home-manager switch
 {{   end -}}
 {{ end -}}
