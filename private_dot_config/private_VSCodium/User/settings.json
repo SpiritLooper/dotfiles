@@ -1,7 +1,7 @@
 {
     "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
     "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "editor.fontFamily": "'Fire Code', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": true,
     "workbench.colorTheme": "Visual Studio Dark",
     "git.confirmSync": false,
