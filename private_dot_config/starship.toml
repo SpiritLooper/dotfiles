@@ -36,6 +36,18 @@ tag_symbol='🔖'
 [git_state]
 [git_status]
 format='( [\[$all_status$ahead_behind\]]($style))'
+style='253'
+conflicted = '='
+ahead = '[⇡($count)](blue)'
+behind = '[⇣($count)](yellow)'
+diverged = '[⇕](purple)'
+up_to_date = ''
+untracked = '[?](blue)'
+stashed = '[\$](yellow)'
+modified = '[!](136)'
+staged = '[+($count)](green)'
+renamed = '[»](yellow)'
+deleted = '✘'
 
 [hostname]
 ssh_only=false
