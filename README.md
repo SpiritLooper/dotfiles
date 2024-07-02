@@ -22,6 +22,7 @@ Fish :fish: has to be installed. Add the following lines in your `configuration.
 # Shell app
 programs.fish.enable = true;
 users.defaultUserShell = pkgs.fish;
+environment.shellAliases = lib.mkForce {};
 ```
 
 ## :inbox_tray:&nbsp; Installation
