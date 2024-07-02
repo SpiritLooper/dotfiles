@@ -1,0 +1,6 @@
+[".vim/pack/alker0/opt/chezmoi.vim"]
+    type = "git-repo"
+    url = "https://github.com/alker0/chezmoi.vim.git"
+    refreshPeriod = "0h"
+    [".vim/pack/alker0/opt/chezmoi.vim".pull]
+        args = ["--ff-only"]

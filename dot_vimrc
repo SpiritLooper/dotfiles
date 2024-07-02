@@ -1,3 +1,6 @@
+" Chezmoi syntax handler
+packadd chezmoi.vim
+
 syntax on
 set expandtab
 set tabstop=2
