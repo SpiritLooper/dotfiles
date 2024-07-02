@@ -36,6 +36,7 @@ nix-shell -p git chezmoi home-manager babelfish starship
 
 And update your dotfiles
 ```sh
+chezmoi init https://github.com/spiritlooper/dotfiles.git
 chezmoi apply
 ```
 
