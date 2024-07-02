@@ -1,11 +1,17 @@
 {{ if eq .chezmoi.os "linux" -}}
 {{   if eq .chezmoi.osRelease.id "nixos" -}}
-# Add fish shell packages
+# Default tools
 { config, pkgs, ... }:
 {
-  home.packages = with pkgs; [ 
-    babelfish
-    kitty
+  home.packages = with pkgs; [
+    vim
+    htop
+    wget
+    git
+    curl
+    chezmoi
+    vscodium
+    starship
   ];
 }
 {{   end -}}
