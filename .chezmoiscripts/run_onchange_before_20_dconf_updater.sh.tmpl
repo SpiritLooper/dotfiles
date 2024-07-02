@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "linux" -}}
+{{  if ne .chezmoi.username "root" -}}
+#!/usr/bin/env fish
+
+{{ $file := "dconf.ini" -}}
+# {{ $file }} hash: {{ include $file | sha256sum }}
+dconf load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
+{{  end -}}
+{{ end -}}
