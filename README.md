@@ -12,6 +12,18 @@
 This repository contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
 Please note that this is my own personal dotfiles.
 
+## :warning:&nbsp; Requirements
+
+### On NixOS :snowflake:&nbsp;
+
+Fish :fish: has to be installed. Add the following lines in your `configuration.nix`
+
+```nix
+# Shell app
+programs.fish.enable = true;
+users.defaultUserShell = pkgs.fish;
+```
+
 ## :inbox_tray:&nbsp; Installation
 
 ### On NixOS :snowflake:&nbsp;
