@@ -3,12 +3,13 @@
 #!/usr/bin/env fish
 
 {{ $files := list "home" "gtk" "shell" "fonts" -}}
-{{- range $i, $file_tools := ( list "default" ) -}}{{- $files = append $files ( joinPath "tools" $file_tools ) -}}{{- end -}}
+{{- range $i, $file_tools := ( list "default" "gui" ) -}}{{- $files = append $files ( joinPath "tools" $file_tools ) -}}{{- end -}}
 ## Nix files to follow hashes
 {{- range $i, $file  := $files -}}
 {{ $file = list $file ".nix.tmpl" | join "" }}
 # {{ $file }} : {{ include ( joinPath "private_dot_config/home-manager" $file ) | sha256sum -}}
 {{ end }}
+##
 
 home-manager switch
 {{   end -}}

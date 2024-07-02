@@ -3,6 +3,12 @@
 # Default tools
 { config, pkgs, ... }:
 {
+  imports = [
+{{-  if ne .chezmoi.username "root" }}
+    ./gui.nix
+{{- end }}
+  ];
+
   home.packages = with pkgs; [
     vim
     htop
@@ -10,7 +16,6 @@
     git
     curl
     chezmoi
-    vscodium
     starship
   ];
 }
