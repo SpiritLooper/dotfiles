@@ -10,6 +10,13 @@
     package = pkgs.apple-cursor;
     size = 26;
   };
+
+  # GTK extensions
+  home.packages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.appindicator
+    gnome.gnome-system-monitor
+  ];
 }
 {{   end -}}
 {{ end -}}
