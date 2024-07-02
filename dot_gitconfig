@@ -7,5 +7,17 @@
     defaultBranch = master
 [core]
     editor = vim
+    pager = delta
 [pull]
     ff = only
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    side-by-side = true
+    line-numbers = true
+    hyperlinks = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
