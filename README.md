@@ -27,3 +27,10 @@ chezmoi apply
 ```
 
 > `chezmoi apply` command add dependencies packages automatically
+
+## :inbox_tray:&nbsp; Update dotfiles
+
+Just run
+```
+chezmoi update
+```

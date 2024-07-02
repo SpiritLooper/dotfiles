@@ -6,10 +6,11 @@ end
 # Disable greetings
 set fish_greeting
 
-{{ if eq .chezmoi.osRelease.id "nixos" -}}
-# sourcing nix envs
-babelfish < {{ .chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh | source 
-
-{{ end -}}
 # Enable starship 
 starship init fish | source
+
+{{- if eq .chezmoi.osRelease.id "nixos" }}
+
+# sourcing nix envs
+babelfish < {{ .chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh | source 
+{{ end -}}
