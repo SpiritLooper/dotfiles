@@ -11,12 +11,23 @@
     size = 26;
   };
 
+  # GTK Theme
+  gtk.theme = {
+    name = "WhiteSur-Dark" ;
+    package = pkgs.whitesur-gtk-theme.override {
+      iconVariant = "standard";
+    };
+  };
+
   # GTK extensions
   home.packages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
     gnome.gnome-system-monitor
+    gnome.gnome-tweaks
   ];
+  
+  home.sessionVariables.GTK_THEME = "WhiteSur-Dark";
 }
 {{   end -}}
 {{ end -}}
