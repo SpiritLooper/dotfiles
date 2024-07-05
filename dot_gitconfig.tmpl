@@ -1,8 +1,11 @@
 [user]
-	name = Julien CLAISSE
-	email = julienclaisse@orange.fr
+    name = Julien CLAISSE
+    email = {{ .email | quote }}
+{{- if .gpgGitSignKey }}
+    signingkey = {{ .gpgGitSignKey | quote }}
+{{ end -}}
 [commit]
-    gpgsign = false
+    gpgsign = {{if .gpgGitSignKey}}true{{else}}false{{end}}
 [init]
     defaultBranch = master
 [core]

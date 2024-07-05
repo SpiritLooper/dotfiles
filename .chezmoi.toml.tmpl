@@ -1,4 +1,16 @@
+{{- $email := "julienclaisse@orange.fr" -}}
+{{- $gpgGitSignKey := "" -}}
+{{- if eq .chezmoi.hostname "EQLT-PH3F5EHL" -}}
+{{-   $email = "julien.claisse@equasens.com" -}}
+{{-   $gpgGitSignKey = "0473CD4D1AFE7EE18AE5D8D79ED3755BB164AB71" -}}
+{{- end -}}
+{{- if eq .chezmoi.hostname "hp-13x-spectre" -}}
+{{-   $gpgGitSignKey = "0B62DD490C0342C3131FFD16D397F971733CD454" -}}
+{{- end -}}
 [diff]
     pager = "delta"
 [edit]
     command = "vim"
+[data]
+    email = {{ $email | quote }}
+    gpgGitSignKey = {{ $gpgGitSignKey | quote }}

@@ -36,7 +36,7 @@ nix-shell -p git chezmoi home-manager babelfish starship
 
 And update your dotfiles
 ```sh
-chezmoi apply
+chezmoi init --apply https://github.com/SpiritLooper/dotfiles.git
 ```
 
 > `chezmoi apply` command add dependencies packages automatically
