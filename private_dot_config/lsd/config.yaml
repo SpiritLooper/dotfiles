@@ -40,7 +40,7 @@ size: default
 sorting:
   column: name
   reverse: false
-  dir-grouping: none
+  dir-grouping: first
 no-symlink: false
 total-size: true
 hyperlink: auto
