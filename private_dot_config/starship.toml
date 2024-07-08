@@ -1,5 +1,5 @@
 format='''
-[┌─\[$username@$hostname\]-\[$directory\] ({($git_state)$git_branch(~$git_commit)$git_status})( $python)( $package)$fill$cmd_duration $status$jobs
+[┌─\[$username@$hostname\]-\[$directory\] ({($git_state)$git_branch(~$git_commit)$git_status})( $python)( $package)$fill($kubernetes )$cmd_duration $status$jobs
 └─(\($nix_shell\)-)](#0050a3)$character
 '''
 
@@ -52,6 +52,11 @@ deleted = '✘'
 [hostname]
 ssh_only=false
 format='[$hostname]($style)'
+
+[kubernetes]
+disabled=false
+style='green'
+format = '$symbol[$context/$namespace]($style)'
 
 [nix_shell]
 format='[$symbol$state]($style)'
