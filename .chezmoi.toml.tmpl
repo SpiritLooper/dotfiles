@@ -1,7 +1,9 @@
 {{- $email := "julienclaisse@orange.fr" -}}
 {{- $gpgGitSignKey := "" -}}
+{{- $kubePrompt := false -}}
 {{- if eq .chezmoi.hostname "EQLT-PH3F5EHL" -}}
 {{-   $email = "julien.claisse@equasens.com" -}}
+{{-   $kubePrompt = true -}}
 {{-   $gpgGitSignKey = "0473CD4D1AFE7EE18AE5D8D79ED3755BB164AB71" -}}
 {{- end -}}
 {{- if eq .chezmoi.hostname "hp-13x-spectre" -}}
@@ -13,4 +15,5 @@
     command = "vim"
 [data]
     email = {{ $email | quote }}
+    kubePrompt = {{ $kubePrompt }}
     gpgGitSignKey = {{ $gpgGitSignKey | quote }}

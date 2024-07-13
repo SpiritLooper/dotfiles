@@ -54,7 +54,7 @@ ssh_only=false
 format='[$hostname]($style)'
 
 [kubernetes]
-disabled=false
+disabled={{ not .kubePrompt }}
 style='green'
 format = '$symbol[$context/$namespace]($style)'
 
