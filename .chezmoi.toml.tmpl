@@ -9,6 +9,9 @@
 {{- if eq .chezmoi.hostname "hp-13x-spectre" -}}
 {{-   $gpgGitSignKey = "0B62DD490C0342C3131FFD16D397F971733CD454" -}}
 {{- end -}}
+{{- if eq .chezmoi.hostname "pc-fix" -}}
+{{-   $gpgGitSignKey = "943D799E257B1118AC47620E35C3FFAA8DF32DF4" -}}
+{{- end -}}
 [diff]
     pager = "delta"
 [edit]
