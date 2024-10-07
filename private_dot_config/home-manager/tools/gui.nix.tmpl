@@ -2,9 +2,12 @@
 {{   if eq .chezmoi.osRelease.id "nixos" -}}
 # Default GUI tools
 { config, pkgs, ... }:
+let 
+  pkgsUnstable = import <nixpkgs-unstable> {};
+in
 {
   home.packages = with pkgs; [
-    vscodium
+    pkgsUnstable.vscodium
     thunderbird
     firefox
     gimp
