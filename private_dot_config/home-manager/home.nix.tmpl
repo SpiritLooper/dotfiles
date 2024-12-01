@@ -18,7 +18,9 @@
   
   imports = [
     ./fonts.nix
+  {{-  if ne .chezmoi.username "root" }}
     ./gtk.nix
+  {{- end }}
     ./shell.nix
     ./tools
   ];
