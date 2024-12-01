@@ -15,7 +15,7 @@
   gtk.theme = {
     name = "WhiteSur-Dark" ;
     package = pkgs.whitesur-gtk-theme.override {
-      iconVariant = "standard";
+      iconVariant = "apple";
     };
   };
 
@@ -23,8 +23,8 @@
   home.packages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
-    gnome.gnome-system-monitor
-    gnome.gnome-tweaks
+    gnome-system-monitor
+    gnome-tweaks
   ];
   
   home.sessionVariables.GTK_THEME = "WhiteSur-Dark";
