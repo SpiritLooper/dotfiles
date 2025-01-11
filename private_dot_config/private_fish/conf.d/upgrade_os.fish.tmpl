@@ -1,0 +1,12 @@
+{{ if eq .chezmoi.os "linux" -}}
+function upgrade-os --description "Update packages and upgrade {{ .chezmoi.osRelease.id }}"
+{{   if eq .chezmoi.osRelease.id "nixos" -}}
+    sudo nixos-rebuild --upgrade boot && 
+        nix-channel --update && 
+        home-manager switch &&
+        echo "Please reboot to apply new package versions"
+{{   else -}}
+    echo "No command defined to upgrade {{ .chezmoi.osRelease.id }}"
+{{   end -}}
+end
+{{ end -}}
