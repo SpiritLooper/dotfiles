@@ -9,6 +9,10 @@ alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'
 
+# kitty alias
+alias icat='kitten icat'
+alias diff='kitten diff'
+
 # TTY Clock
 alias clock 'tty-clock -sxcbD -d 0.99s'
 
