@@ -20,7 +20,6 @@ function gen_passwd --description "Generate random password"
 end 
 
 {{- if eq .chezmoi.osRelease.id "nixos" }}
-
 # sourcing nix envs
 babelfish < {{ .chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh | source 
 {{ end -}}

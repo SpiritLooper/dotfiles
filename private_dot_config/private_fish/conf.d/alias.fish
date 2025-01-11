@@ -5,9 +5,9 @@ alias cat='bat --paging=never'
 alias ls='lsd'
 
 # Kubernetes
-alias k 'kubectl'
-alias kctx 'kubectx'
-alias kns 'kubens'
+alias k='kubectl'
+alias kctx='kubectx'
+alias kns='kubens'
 
 # TTY Clock
 alias clock 'tty-clock -sxcbD -d 0.99s'
