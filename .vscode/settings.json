@@ -3,6 +3,7 @@
         "dot_bashrc": "shellscript",
         "dot_gitconfig.tmpl": "ini",
         "*.fish.tmpl": "shellscript",
-        "*.nix.tmpl": "nix"
+        "*.nix.tmpl": "nix",
+        "*.toml.tmpl": "toml",
     }
 }
