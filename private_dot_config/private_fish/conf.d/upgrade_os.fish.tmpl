@@ -9,4 +9,16 @@ function upgrade-os --description "Update packages and upgrade {{ .chezmoi.osRel
     echo "No command defined to upgrade {{ .chezmoi.osRelease.id }}"
 {{   end -}}
 end
+{{   if eq .chezmoi.osRelease.id "nixos" -}}
+function clean-nix-store --description "Collect garbage, optimise nix-store and keep one bootentry at boot"
+    echo Tasks on user env 
+    nix-collect-garbage -d
+
+    echo Tasks on system env
+    sudo nix-collect-garbage -d &&
+        echo Optimising store ...&&
+        sudo nix-store --optimise &&
+        sudo nixos-rebuild boot
+end
+{{   end -}}
 {{ end -}}
