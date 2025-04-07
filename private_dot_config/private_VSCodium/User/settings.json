@@ -1,5 +1,6 @@
 {
     "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
+    "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": true,
@@ -19,5 +20,24 @@
     "[ssh_config]": {},
     "security.workspace.trust.untrustedFiles": "open",
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.zoomLevel": 1
-}
+    "window.zoomLevel": 1,
+    "redhat.telemetry.enabled": false,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    "terminal.external.linuxExec": "fish"
+}⏎    
