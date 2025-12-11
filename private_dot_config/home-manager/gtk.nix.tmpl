@@ -1,6 +1,20 @@
 {{ if eq .chezmoi.os "linux" -}}
 {{   if eq .chezmoi.osRelease.id "nixos" -}}
 { config, pkgs, ... }:
+let
+  enable = config.homeManagerConfig.gui.enable && pkgs.stdenv.isLinux;
+  whitesur-gtk-theme =
+  pkgs.whitesur-gtk-theme.overrideAttrs (_: prev: {
+    pname = "whitesur-gtk-theme-libadwaita-patch";
+    postPatch =
+      prev.postPatch
+      + ''
+        substituteInPlace libs/lib-install.sh --replace-fail '"''${HOME}/.config/gtk-4.0"' '"$out/config/gtk-4.0"'
+        substituteInPlace install.sh --replace-fail '"''${libadwaita}"' '"true"'
+        substituteInPlace install.sh --replace-fail '"$UID"' '"1"'
+      '';
+  });
+in
 {
   gtk.enable = true;
 
@@ -11,11 +25,34 @@
     size = 26;
   };
 
-  # GTK Theme
-  gtk.theme = {
-    name = "WhiteSur-Dark" ;
-    package = pkgs.whitesur-gtk-theme.override {
-      iconVariant = "apple";
+
+  gtk = {
+    theme = {
+      name = "WhiteSur-Dark";
+      package = whitesur-gtk-theme;
+    };
+  };
+
+  xdg.configFile = {
+    "gtk-3.0/settings.ini" = {
+      force = true;
+    };
+    "gtk-4.0/settings.ini" = {
+      force = true;
+    };
+    "gtk-4.0/gtk.css" = {
+      force = true;
+      source = "${whitesur-gtk-theme}/config/gtk-4.0/gtk.css";
+    };
+    "gtk-4.0/assets" = {
+      force = true;
+      source = "${whitesur-gtk-theme}/config/gtk-4.0/assets";
+      recursive = true;
+    };
+    "gtk-4.0/windows-assets" = {
+      force = true;
+      source = "${whitesur-gtk-theme}/config/gtk-4.0/windows-assets";
+      recursive = true;
     };
   };
 
