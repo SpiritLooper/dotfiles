@@ -19,6 +19,8 @@ function gen-passwd --description "Generate random password"
   end
 end 
 
+fish_add_path "/home/spiritlooper/.local/bin" 
+
 {{- if eq .chezmoi.osRelease.id "nixos" }}
 # sourcing nix envs
 babelfish < {{ .chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh | source 
