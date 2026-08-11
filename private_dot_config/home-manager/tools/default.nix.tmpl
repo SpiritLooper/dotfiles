@@ -2,6 +2,9 @@
 {{   if eq .chezmoi.osRelease.id "nixos" -}}
 # Default tools
 { config, pkgs, ... }:
+let
+  pkgsUnstable = import <nixpkgs-unstable> {};
+in
 {
   imports = [
 {{-  if ne .chezmoi.username "root" }}
@@ -24,7 +27,7 @@
     kubectl
     kubectx
     k9s
-    fluxcd
+    pkgsUnstable.fluxcd
     fzf
     lsd
     nmap
