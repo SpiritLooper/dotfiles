@@ -21,7 +21,9 @@ end
 
 fish_add_path "/home/spiritlooper/.local/bin" 
 
+{{- if hasKey .chezmoi.osRelease "id" }}
 {{- if eq .chezmoi.osRelease.id "nixos" }}
 # sourcing nix envs
 babelfish < {{ .chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh | source 
+{{ end -}}
 {{ end -}}

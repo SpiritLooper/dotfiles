@@ -1,30 +1,30 @@
 # cat replacement
 alias cat='bat --decorations=never --paging=never'
 
-# LS alias
+# LS replacement
 alias ls='lsd'
-
-# ip colors
-alias ip='ip -c'
 
 # Kubernetes
 alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'
 
-# kitty alias
+# Kitty
 alias icat='kitten icat'
 alias diff='kitten diff'
 
+# ip colors
+alias ip='ip -c'
+
 # TTY Clock
-alias clock 'tty-clock -sxcbD -d 0.99s'
+alias clock='tty-clock -sxcbD -d 0.99s'
 
-# Git diff
-function batdiff --description "Better Git diff with batcat"
+# Git diff avec bat
+batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
-end
+}
 
-# Add tree cmd
-function tree --description 'Tree files with LSD'
-    ls --tree $argv
-end
+# Tree avec lsd
+tree() {
+    ls --tree "$@"
+}

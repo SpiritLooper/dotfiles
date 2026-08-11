@@ -41,6 +41,22 @@ chezmoi init --apply https://github.com/SpiritLooper/dotfiles.git
 
 > `chezmoi apply` command add dependencies packages automatically
 
+### On MacOS :apple:&nbsp;
+
+Some programs has to be installed
+1. brew : [see here](https://brew.sh)
+2. chezmoi with brew 
+
+```sh
+brew install chezmoi
+```` 
+
+And update your dotfiles
+```sh
+chezmoi init --apply https://github.com/SpiritLooper/dotfiles.git
+```
+
+
 ## :inbox_tray:&nbsp; Update dotfiles
 
 Just run

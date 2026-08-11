@@ -1,7 +1,8 @@
+{{ if eq .chezmoi.os "darwin" -}}
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "ctrl+[Quote]",
+        "key": "Cmd+ù",
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
@@ -25,7 +26,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+q",
+        "key": "Cmd+q",
         "command": "-workbench.action.quit"
     },
     {
@@ -37,3 +38,4 @@
         "command": "-editor.action.insertCursorBelow"
     }
 ]
+{{ end -}}
