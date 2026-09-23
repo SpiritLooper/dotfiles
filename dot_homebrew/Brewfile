@@ -1,0 +1,33 @@
+cask "firefox"
+
+cask "font-sauce-code-pro-nerd-font"
+cask "font-fira-code"
+
+cask "vscodium"
+cask "kitty"
+
+brew "starship"
+brew "fish"
+
+brew "jq"
+brew "yq"
+brew "wget"
+
+brew "kubernetes-cli"
+brew "k9s"
+
+brew "lsd"
+brew "bat"
+brew "git-delta"
+brew "gnupg"
+
+brew "git-lfs"
+brew "iproute2mac"
+brew "docker"
+brew "docker-compose"
+brew "docker-buildx"
+brew "unix2dos"
+brew "curl"
+brew "fzf"
+brew "gnu-sed"
+
