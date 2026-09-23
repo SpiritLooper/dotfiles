@@ -1,3 +1,11 @@
+eval "$(brew shellenv)"
+
+# Args autoparcours
+zmodload zsh/complist
+setopt menucomplete
+zstyle ':completion:*' menu select=0 search
+
+
 autoload -Uz compinit
 compinit
 
