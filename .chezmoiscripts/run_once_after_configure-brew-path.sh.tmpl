@@ -1,0 +1,6 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+chmod go-w "$HOMEBREW_PREFIX/share"
+chmod -R go-w "$HOMEBREW_PREFIX/share/zsh"
+{{ end -}}

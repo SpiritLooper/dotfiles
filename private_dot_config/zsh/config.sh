@@ -5,6 +5,9 @@ zmodload zsh/complist
 setopt menucomplete
 zstyle ':completion:*' menu select=0 search
 
+if type brew &> /dev/null; then
+  FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+fi
 
 autoload -Uz compinit
 compinit

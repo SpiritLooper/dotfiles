@@ -32,3 +32,4 @@ brew "fzf"
 brew "gnu-sed"
 
 brew "zsh-autosuggestions"
+brew "zsh-completions"
