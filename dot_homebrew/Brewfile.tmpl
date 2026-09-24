@@ -35,3 +35,7 @@ brew "gnu-sed"
 
 brew "zsh-autosuggestions"
 brew "zsh-completions"
+
+{{ if eq .chezmoi.os "darwin" -}}
+brew "pinentry-mac"
+{{ end -}}

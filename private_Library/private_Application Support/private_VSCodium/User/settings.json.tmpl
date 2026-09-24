@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
 {
     "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
     "terminal.integrated.shellIntegration.enabled": false,
@@ -41,3 +42,4 @@
     },
     "terminal.external.linuxExec": "fish"
 }
+{{ end -}}

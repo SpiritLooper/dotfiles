@@ -7,3 +7,6 @@ export PAGER="bat"
 
 # Type de terminal
 export TERM="xterm-256color"
+
+# GPG Key sign env
+export GPG_TTY=$(tty)
