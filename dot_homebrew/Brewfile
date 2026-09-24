@@ -21,6 +21,8 @@ brew "bat"
 brew "git-delta"
 brew "gnupg"
 
+brew "tty-clock"
+
 brew "git-lfs"
 brew "iproute2mac"
 brew "docker"
