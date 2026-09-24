@@ -1,5 +1,5 @@
 # cat replacement
-alias cat='bat --paging=never'
+alias cat='bat --decorations=never --paging=never'
 
 # LS replacement
 alias ls='lsd'
@@ -12,6 +12,9 @@ alias kns='kubens'
 # Kitty
 alias icat='kitten icat'
 alias diff='kitten diff'
+
+# ip colors
+alias ip='ip -c'
 
 # TTY Clock
 alias clock='tty-clock -sxcbD -d 0.99s'

@@ -1,8 +1,11 @@
 # cat replacement
-alias cat='bat --paging=never'
+alias cat='bat --decorations=never --paging=never'
 
 # LS alias
 alias ls='lsd'
+
+# ip colors
+alias ip='ip -c'
 
 # Kubernetes
 alias k='kubectl'
