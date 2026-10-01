@@ -1,0 +1,8 @@
+{{- if eq .chezmoi.os "darwin" -}}
+# Keybindings: Home → début de ligne, End → fin de ligne (macOS)
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# Option+Suppr → supprimer le mot à droite
+bindkey "^[[3;3~" delete-word
+{{- end -}}
