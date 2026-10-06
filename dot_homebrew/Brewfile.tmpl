@@ -12,6 +12,8 @@ brew "fish"
 brew "jq"
 brew "yq"
 brew "wget"
+brew "mise"
+brew "nmap"
 
 brew "kubernetes-cli"
 brew "k9s"
@@ -20,6 +22,7 @@ brew "lsd"
 brew "bat"
 brew "git-delta"
 brew "gnupg"
+brew "sops"
 
 brew "tty-clock"
 
@@ -32,10 +35,12 @@ brew "unix2dos"
 brew "curl"
 brew "fzf"
 brew "gnu-sed"
+brew "ncdu"
 
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 
 {{ if eq .chezmoi.os "darwin" -}}
 brew "pinentry-mac"
+brew "mactop"
 {{ end -}}
