@@ -9,7 +9,11 @@ map ctrl+shift+b launch --allow-remote-control kitty +kitten broadcast --match-t
 
 # Font
 font_family 	SauceCodePro Nerd Font Mono
+{{  if eq .chezmoi.osRelease.id "fedora" -}}
+font_size 	10.5
+{{-  else -}}
 font_size 	13.0
+{{- end }}
 
 # Layouts config
 enabled_layouts fat, tall, stack
