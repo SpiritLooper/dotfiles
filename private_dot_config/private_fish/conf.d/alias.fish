@@ -1,6 +1,11 @@
 # cat replacement
-alias cat='bat --decorations=never --paging=never'
-
+function cat --description 'cat with bat fallback'
+    if command -q bat
+        command bat --decorations=never --paging=never $argv
+    else
+        command cat $argv
+    end
+end
 # LS alias
 alias ls='lsd'
 
