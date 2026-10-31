@@ -22,6 +22,7 @@
   {{-  if eq .chezmoi.osRelease.id "fedora" }}
   targets.genericLinux.enable = true;
   targets.genericLinux.gpu.enable = true;
+  nix.keepOldNixPath = false;
   {{- end }}
 
   # Let Home Manager install and manage itself.

@@ -19,10 +19,14 @@ in
   gtk.enable = true;
 
   # Cursor Theme
-  gtk.cursorTheme = {
+  home.pointerCursor = {
+    enable = true;
     name = "macOS";
     package = pkgs.apple-cursor;
     size = 26;
+
+    gtk.enable = true;
+    x11.enable = true;
   };
 
   gtk = {
