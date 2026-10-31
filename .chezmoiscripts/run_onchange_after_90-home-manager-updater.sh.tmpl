@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.os "linux" -}}
-{{   if eq .chezmoi.osRelease.id "nixos" -}}
+{{   if or (eq .chezmoi.osRelease.id "nixos") ( eq .chezmoi.osRelease.id "fedora" ) -}}
 #!/usr/bin/env fish
 
 {{ $files := list "home" "gtk" "shell" "fonts" -}}

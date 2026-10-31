@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.os "linux" -}}
-{{   if eq .chezmoi.osRelease.id "nixos" -}}
+{{   if or (eq .chezmoi.osRelease.id "nixos") ( eq .chezmoi.osRelease.id "fedora" ) -}}
 { config, pkgs, ... }:
 let
   enable = config.homeManagerConfig.gui.enable && pkgs.stdenv.isLinux;
@@ -58,10 +58,12 @@ in
 
   # GTK extensions
   home.packages = with pkgs; [
+{{-   if eq .chezmoi.osRelease.id "nixos" }}
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
     gnome-system-monitor
     gnome-tweaks
+{{- end }}
   ];
   
   home.sessionVariables.GTK_THEME = "WhiteSur-Dark";

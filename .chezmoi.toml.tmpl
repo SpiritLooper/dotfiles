@@ -1,7 +1,11 @@
 {{- $kubePrompt := true -}}
+{{- $useNix := or (eq .chezmoi.osRelease.id "nixos") (eq .chezmoi.osRelease.id "fedora") -}}
 [diff]
     pager = "delta"
 [edit]
     command = "vim"
 [data]
     kubePrompt = {{ $kubePrompt }}
+{{- if $useNix }}
+    stateVersion = {{ promptStringOnce . "stateVersion" "Nix State Version" | quote }}
+{{- end -}}

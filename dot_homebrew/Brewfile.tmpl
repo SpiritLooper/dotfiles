@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
 cask "firefox"
 
 cask "font-sauce-code-pro-nerd-font"
@@ -40,7 +41,6 @@ brew "ncdu"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 
-{{ if eq .chezmoi.os "darwin" -}}
 brew "pinentry-mac"
 brew "mactop"
 {{ end -}}

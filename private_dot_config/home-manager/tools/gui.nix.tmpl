@@ -1,20 +1,25 @@
 {{ if eq .chezmoi.os "linux" -}}
-{{   if eq .chezmoi.osRelease.id "nixos" -}}
+{{   if or (eq .chezmoi.osRelease.id "nixos") ( eq .chezmoi.osRelease.id "fedora" ) -}}
 # Default GUI tools
 { config, pkgs, ... }:
 let 
+  {{   if eq .chezmoi.osRelease.id "nixos" -}}
   pkgsUnstable = import <nixpkgs-unstable> {};
+  {{-   else if eq .chezmoi.osRelease.id "fedora" -}}
+  pkgsUnstable = import <nixpkgs> {};
+  {{- end }}
 in
 {
   home.packages = with pkgs; [
-    pkgsUnstable.vscodium
-    pkgsUnstable.zed-editor
+{{-   if eq .chezmoi.osRelease.id "nixos" }}
     firefox
     gimp
     thunderbird
     vlc
     nixd
     nil
+{{- end }}
+    pkgsUnstable.vscodium
   ];
 }
 {{   end -}}

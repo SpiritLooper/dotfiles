@@ -1,9 +1,13 @@
 {{ if eq .chezmoi.os "linux" -}}
-{{   if eq .chezmoi.osRelease.id "nixos" -}}
+{{   if or (eq .chezmoi.osRelease.id "nixos") ( eq .chezmoi.osRelease.id "fedora" ) -}}
 # Default tools
 { config, pkgs, ... }:
 let
+  {{   if eq .chezmoi.osRelease.id "nixos" -}}
   pkgsUnstable = import <nixpkgs-unstable> {};
+  {{-   else if eq .chezmoi.osRelease.id "fedora" -}}
+  pkgsUnstable = import <nixpkgs> {};
+  {{- end }}
 in
 {
   imports = [
@@ -13,16 +17,21 @@ in
   ];
 
   home.packages = with pkgs; [
+{{-   if eq .chezmoi.osRelease.id "nixos" }}
     vim
-    btop
     wget
     git
     curl
-    nmap
     openssl
     chezmoi
-    starship
     jq
+    gnupg
+    python3
+    python314Packages.pip
+{{- end }}
+    btop
+    nmap
+    starship
     yq
     kubectl
     kubectx
@@ -30,14 +39,10 @@ in
     pkgsUnstable.fluxcd
     fzf
     lsd
-    nmap
     bat
     delta
-    gnupg
     tty-clock
     libxml2
-    python3
-    python314Packages.pip
   ];
 }
 {{   end -}}
