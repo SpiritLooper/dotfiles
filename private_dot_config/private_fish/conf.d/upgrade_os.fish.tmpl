@@ -5,6 +5,14 @@ function upgrade-os --description "Update packages and upgrade {{ .chezmoi.osRel
         nix-channel --update && 
         home-manager switch &&
         echo "Please reboot to apply new package versions"
+{{  else if eq .chezmoi.osRelease.id "fedora" -}}
+    rpm-ostree upgrade &&
+        flatpak update &&
+        home-manager switch &&
+        fwupdmgr refresh --force &&
+        fwupdmgr get-updates &&
+        fwupdmgr update &&
+        echo "Please reboot to apply new package versions"
 {{   else -}}
     echo "No command defined to upgrade {{ .chezmoi.osRelease.id }}"
 {{   end -}}
