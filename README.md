@@ -25,7 +25,26 @@ users.defaultUserShell = pkgs.fish;
 environment.shellAliases = lib.mkForce {};
 ```
 
+### On Fedora :tophat:&nbsp;
+
+These packages has to be installed : 
+- `fish`
+- `git`
+- `nix`
+
 ## :inbox_tray:&nbsp; Installation
+
+### On NixOS :snowflake:&nbsp;
+
+Create a nix-shell with dependencies packages
+```sh
+nix-shell -p home-manager babelfish
+```
+
+And update your dotfiles
+```sh
+chezmoi init --apply https://github.com/SpiritLooper/dotfiles.git
+```
 
 ### On NixOS :snowflake:&nbsp;
 

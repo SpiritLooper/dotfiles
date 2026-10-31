@@ -8,7 +8,7 @@
   home.homeDirectory = "{{ .chezmoi.homeDir }}";
   
   imports = [
-  {{-   if eq .chezmoi.osRelease.id "nixos" }}
+  {{-  if eq .chezmoi.osRelease.id "nixos" }}
     ./fonts.nix
   {{- end }}
   {{-  if ne .chezmoi.username "root" }}
@@ -18,6 +18,11 @@
     ./shell.nix
     ./tools
   ];
+
+  {{-  if eq .chezmoi.osRelease.id "fedora" }}
+  targets.genericLinux.enable = true;
+  targets.genericLinux.gpu.enable = true;
+  {{- end }}
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
