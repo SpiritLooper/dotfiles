@@ -1,0 +1,114 @@
+{{-  if eq .chezmoi.osRelease.id "fedora" -}}
+{
+  "policies": {
+    "DisableAccounts": true,
+    "DisableFeedbackCommands": true,
+
+    "DisableTelemetry": true,
+    "DisableFirefoxStudies": true,
+    "DisableRemoteImprovements": true,
+
+    "CrashReportsSubmit": {
+      "Enabled": false
+    },
+
+    "AutofillAddressEnabled": false,
+    "AutofillCreditCardEnabled": false,
+    "PasswordManagerEnabled": false,
+    "OfferToSaveLogins": false,
+    "DisableFormHistory": true,
+
+    "TranslateEnabled": false,
+
+    "AIControls": {
+      "Default": {
+        "Value": "blocked",
+        "Locked": true
+      },
+      "Translations": {
+        "Value": "blocked",
+        "Locked": true
+      }
+    },
+
+    "IPProtectionAvailable": false,
+
+    "FirefoxSuggest": {
+      "WebSuggestions": false,
+      "SponsoredSuggestions": false,
+      "OnlineEnabled": false,
+      "Locked": true
+    },
+
+    "SearchEngines": {
+      "Default": "Google",
+      "Remove": [
+        "Bing",
+        "Amazon.fr",
+        "Amazon.com",
+        "eBay",
+        "Qwant",
+        "Ecosia",
+        "Twitter"
+      ],
+      "PreventInstalls": false
+    },
+
+    "UserMessaging": {
+      "ExtensionRecommendations": false,
+      "FeatureRecommendations": false,
+      "UrlbarInterventions": false,
+      "SkipOnboarding": true,
+      "MoreFromMozilla": false,
+      "FirefoxLabs": false,
+      "Locked": true
+    },
+
+    "EnableTrackingProtection": {
+      "Value": true,
+      "Locked": false
+    },
+
+    "Preferences": {
+      "signon.firefoxRelay.feature": {
+        "Value": "disabled",
+        "Status": "locked",
+        "Type": "string"
+      },
+      "browser.crashReports.unsubmittedCheck.enabled": {
+        "Value": false,
+        "Status": "locked",
+        "Type": "boolean"
+      },
+      "browser.crashReports.unsubmittedCheck.autoSubmit2": {
+        "Value": false,
+        "Status": "locked",
+        "Type": "boolean"
+      },
+      "browser.tabs.crashReporting.sendReport": {
+        "Value": false,
+        "Status": "locked",
+        "Type": "boolean"
+      }
+    },
+
+    "ExtensionSettings": {
+      "uBlock0@raymondhill.net": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "private_browsing": true
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi",
+        "private_browsing": false
+      },
+      "sponsorBlocker@ajay.app": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi",
+        "private_browsing": true
+      }
+    }
+  }
+}
+{{- end -}}
