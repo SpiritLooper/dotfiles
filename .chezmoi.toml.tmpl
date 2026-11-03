@@ -9,4 +9,6 @@
     kubePrompt = {{ $kubePrompt }}
 {{- if $useNix }}
     stateVersion = {{ promptStringOnce . "stateVersion" "Nix State Version" | quote }}
+{{- else }}
+    stateVersion = ""
 {{- end -}}
