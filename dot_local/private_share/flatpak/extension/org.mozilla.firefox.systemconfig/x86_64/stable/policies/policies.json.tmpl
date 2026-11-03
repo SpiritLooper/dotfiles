@@ -1,4 +1,4 @@
-{{-  if eq .chezmoi.osRelease.id "fedora" -}}
+{{-  if and ( hasKey .chez moi.osRelease "id" ) ( eq .chezmoi.osRelease.id "fedora" ) -}}
 {
   "policies": {
     "DisableAccounts": true,
