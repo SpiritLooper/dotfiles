@@ -1,6 +1,6 @@
 {{- $kubePrompt := true -}}
 
-{{- $useNix := and ( hasKey .chez-moi.osRelease "id" ) (or (eq .chezmoi.osRelease.id "nixos") (eq .chezmoi.osRelease.id "fedora")) -}}
+{{- $useNix := and ( hasKey .chezmoi.osRelease "id" ) (or (eq .chezmoi.osRelease.id "nixos") (eq .chezmoi.osRelease.id "fedora")) -}}
 [diff]
     pager = "delta"
 [edit]
